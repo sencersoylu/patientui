@@ -43,13 +43,17 @@ export default {
     params.append('username', 'ngs');
     params.append('password', 'ngs');
 
+    const config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    };
+
     this.axios.post(
       'https://empitest.smhd.sanmateocounty.ads:8443/ws/auth/auth/authenticate',
+      params,
       {
-        data: 'some post data',
-      },
-      {
-        withCredentials: false,
+        withCredentials: true,
       }
     );
   },
